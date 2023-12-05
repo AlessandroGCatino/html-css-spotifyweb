@@ -7,25 +7,37 @@ box-sizing: border-box;
 .player{
     z-index: 999;
     height: 10vh;
+    min-height: 70px;
     width: 100vw;
-    background-color: midnightblue;
+    background-color: #282828;
     position: fixed;
     bottom: 0;
 }
 
 aside{
-    width: 20vw;
+    width: 200px;
     max-height: 90vh;
-    background-color: #000000;
+    background-color: black;
+    color: grey;
+    margin-bottom: 70px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    overflow: auto;
 }
 
 main{
-    width: 80vw;
+    width: calc(100vw - 200px);
     height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
     background-color: aqua;
 }
 
@@ -37,25 +49,38 @@ body>div{
 }
 
 .logo{
-    width: 70%;
+    max-width: 60%;
 }
 
+.logo,
+aside h4{
+    color: white;
+}
+
+aside h4{
+    text-transform: uppercase;
+}
 
 li{
     color: grey;
     display: flex;
     align-items: center;
+    margin-block: 5px;
     position: relative;
+    font-weight: bold;
 }
 
-li svg{
+li svg,
+.new-playlist span,
+.user-cta>span{
     width: 2em;
-    margin-right: 5px;
-    display: block;
+    margin-right: 8px;
+    display: inline;
 }
 
 li:hover{
     color: white;
+    cursor: pointer;
 }
 
 li:hover :before{
@@ -64,4 +89,65 @@ li:hover :before{
     height: 100%;
     left: -15px;
     border-left: 3px solid #acfd2f;
+}
+
+
+.new-playlist{
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+.new-playlist span{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: grey;
+    aspect-ratio: 1/1;
+}
+
+.playlists{
+    text-transform: capitalize;
+    line-height: 160%;
+}
+
+.user-cta{
+    margin-top: auto;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.user-cta hr{
+    border: 1px solid;
+    margin-block: 10px;
+}
+
+.user-cta figure{
+    width: 20%;
+    aspect-ratio: 1;
+    background-color: gray;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-cta figure img{
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.user-cta>div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.user-cta>div span{
+    font-size: 16px;
+    color: white;
 }
