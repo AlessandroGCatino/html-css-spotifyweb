@@ -38,7 +38,7 @@ main{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: aqua;
+    background-color: coral;
 }
 
 body>div{
@@ -48,8 +48,11 @@ body>div{
     flex-wrap: wrap;
 }
 
-.logo{
+.logo .big{
     max-width: 60%;
+}
+.logo .small{
+    display: none;
 }
 
 .logo,
@@ -71,14 +74,16 @@ li{
 }
 
 li svg,
-.new-playlist span,
-.user-cta>span{
+.new-playlist .plus{
     width: 2em;
     margin-right: 8px;
     display: inline;
 }
 
-li:hover{
+li:hover,
+.new-playlist :last-child,
+.user-cta div:hover,
+.new-playlist:hover .create{
     color: white;
     cursor: pointer;
 }
@@ -95,9 +100,9 @@ li:hover :before{
 .new-playlist{
     display: flex;
     align-items: center;
-    color: grey;
 }
-.new-playlist span{
+
+.new-playlist .plus{
     width: 40px;
     display: flex;
     justify-content: center;
@@ -107,6 +112,14 @@ li:hover :before{
     font-size: 30px;
     background-color: grey;
     aspect-ratio: 1/1;
+}
+
+.new-playlist .create{
+    color: grey;
+}
+
+.new-playlist:hover .plus{
+    background-color: white;
 }
 
 .playlists{
@@ -147,7 +160,45 @@ li:hover :before{
     gap: 10px;
 }
 
-.user-cta>div span{
+.user-cta>.profile span{
     font-size: 16px;
     color: white;
+}
+
+
+@media screen and (max-width:375px) {
+
+    main{
+        width: calc(100vw - 70px);
+    }
+
+    aside{
+        width: auto;
+        align-items: center;
+    }
+
+    .logo .big,
+    aside h4,
+    nav ul li span,
+    .new-playlist,
+    .playlists,
+    .user-cta>div span:last-child{
+        display: none;
+    }
+    .logo .small{
+        display: block;
+        width: 2em;
+    }
+
+    .user-cta .download{
+        font-size: 2em;
+    }
+
+    .user-cta figure{
+        width: 2em;
+    }
+    {
+        display: none;
+    }
+    
 }
