@@ -1,0 +1,67 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.player{
+    z-index: 999;
+    height: 10vh;
+    width: 100vw;
+    background-color: midnightblue;
+    position: fixed;
+    bottom: 0;
+}
+
+aside{
+    width: 20vw;
+    max-height: 90vh;
+    background-color: #000000;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main{
+    width: 80vw;
+    height: 100vh;
+    background-color: aqua;
+}
+
+body>div{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 70%;
+}
+
+
+li{
+    color: grey;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+li svg{
+    width: 2em;
+    margin-right: 5px;
+    display: block;
+}
+
+li:hover{
+    color: white;
+}
+
+li:hover :before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    left: -15px;
+    border-left: 3px solid #acfd2f;
+}
