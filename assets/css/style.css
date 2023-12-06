@@ -4,19 +4,37 @@ padding: 0;
 box-sizing: border-box;
 }
 
-.player{
-    z-index: 999;
-    height: 10vh;
-    min-height: 70px;
-    width: 100vw;
-    background-color: #282828;
-    position: fixed;
-    bottom: 0;
+a{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+
+
+/* ANCHOR macroaree */
+
+.container{
+    height: 100vh;
+}
+
+.main-content{
+    height: calc(100% - 70px);
+    background-color: #141922;
+    display: flex;
+}
+
+main{
+    width: calc(100% - 200px);
 }
 
 aside{
     width: 200px;
-    max-height: 90vh;
+    height: 100%;
     background-color: black;
     color: grey;
     margin-bottom: 70px;
@@ -24,29 +42,17 @@ aside{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 50;
-    overflow: auto;
+    overflow: hidden;
 }
 
-main{
-    width: calc(100vw - 200px);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: coral;
+.player{
+    z-index: 999;
+    height: 70px;
+    background-color: #282828;
 }
 
-body>div{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-}
+
+/* ANCHOR aside */
 
 .logo .big{
     max-width: 60%;
@@ -125,10 +131,12 @@ li:hover :before{
 .playlists{
     text-transform: capitalize;
     line-height: 160%;
+    margin-bottom: auto;
+    overflow: auto;
 }
 
 .user-cta{
-    margin-top: auto;
+    /* margin-top: auto; */
     font-weight: bold;
     font-size: 12px;
 }
@@ -147,8 +155,6 @@ li:hover :before{
 }
 
 .user-cta figure img{
-    width: 100%;
-    display: block;
     object-fit: contain;
     border-radius: 50%;
 }
@@ -165,21 +171,83 @@ li:hover :before{
     color: white;
 }
 
+/* ANCHOR upgrade */
+
+.upgrade{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(8, 11, 18, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 200px;
+    padding-block: 20px;
+    padding-right: 50px;
+}
+
+.btn{
+    color: white;
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.upgrade .btn:hover{
+    transition: 0.5s;
+    scale: 1.2;
+}
+
+
+/* ANCHOR dischi */
+
+.main-albums{
+    margin-top: 80px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.main-albums ul{
+    align-self: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.main-albums ul li:first-child::after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #acfd2f;
+    bottom: -5px;
+    left: 33%;
+    width: 35%;
+}
+
+
+/* ANCHOR small */
 
 @media screen and (max-width:375px) {
 
     main{
-        width: calc(100vw - 70px);
+        width: calc(100% - 70px);
+    }
+
+    .upgrade{
+        left: 70px;
     }
 
     aside{
-        width: auto;
+        width: 70px;
         align-items: center;
     }
 
     .logo .big,
     aside h4,
-    nav ul li span,
+    aside nav ul li span,
     .new-playlist,
     .playlists,
     .user-cta>div span:last-child{
@@ -194,11 +262,11 @@ li:hover :before{
         font-size: 2em;
     }
 
+    aside nav{
+        margin-bottom: auto;
+    } 
     .user-cta figure{
         width: 2em;
-    }
-    {
-        display: none;
     }
     
 }
