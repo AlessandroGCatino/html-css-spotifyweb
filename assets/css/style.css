@@ -323,6 +323,12 @@ li:hover :before{
     font-size: 14px;
 }
 
+.commands.left span:hover{
+    opacity: 1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .commands.left div:first-of-type{
     display: flex;
     flex-direction: column;
