@@ -23,7 +23,7 @@ img{
 }
 
 .main-content{
-    height: calc(100% - 70px);
+    height: calc(100% - 100px);
     background-color: #141922;
     display: flex;
 }
@@ -39,7 +39,6 @@ aside{
     height: 100%;
     background-color: black;
     color: grey;
-    margin-bottom: 70px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -49,8 +48,10 @@ aside{
 
 .player{
     z-index: 999;
-    height: 70px;
+    height: 100px;
     background-color: #282828;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -184,6 +185,7 @@ li:hover :before{
     top: 0;
     right: 0;
     left: 200px;
+    z-index: 50;
     padding-block: 20px;
     padding-right: 50px;
 }
@@ -265,6 +267,71 @@ li:hover :before{
     overflow: hidden;
 }
 
+.album figure{
+    position: relative;
+}
+
+.play{
+    display: none;
+}
+
+.album figure:hover .play{
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* ANCHOR player */
+
+.side{
+    width: 25%;
+}
+
+.mid {
+    width: 50%;
+}
+
+.commands{
+    border: 1px solid red;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    color: white;
+    overflow: hidden;
+}
+
+.commands.left{
+    align-items: center;
+    gap: 20px;
+}
+
+.commands.left span{
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.commands.left figure{
+    height: 100%;
+}
+
+.commands.left figure img{
+    width: 100%;
+    min-width: 77px;
+    height: 100%;
+    min-height: 77px;
+
+}
+
+/* ANCHOR md */
+
+
 @media screen and (max-width:768px) {
 
     .btn{
@@ -277,6 +344,8 @@ li:hover :before{
         width: calc(100%/4 - 10px);}
     
 }
+
+/* ANCHOR sm */
 
 @media screen and (max-width:576px) {
 
@@ -292,7 +361,7 @@ li:hover :before{
 }
 
 
-/* ANCHOR small */
+/* ANCHOR xs */
 
 @media screen and (max-width:425px) {
 
