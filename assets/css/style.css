@@ -299,17 +299,24 @@ li:hover :before{
 }
 
 .commands{
-    border: 1px solid red;
     height: 100%;
     display: flex;
     padding: 10px;
     color: white;
     overflow: hidden;
-}
-
-.commands.left{
     align-items: center;
     gap: 20px;
+}
+
+.commands.side .fa-solid,
+.commands.side .fa-regular{
+    opacity: 0.6;
+}
+
+.commands .fa-solid:hover,
+.commands .fa-regular:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 .commands.left span{
@@ -323,11 +330,95 @@ li:hover :before{
 
 .commands.left figure img{
     width: 100%;
-    min-width: 77px;
+    min-width: 70px;
     height: 100%;
-    min-height: 77px;
+    min-height: 70px;
+}
+
+.commands.left figure img:hover{
+    transform: scale(110%);
+}
+
+.commands.mid{
+    display: flex;
+    flex-direction: column;
+}
+
+.commands.mid .upper{
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.commands.mid .down{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.commands.mid .down .base-line{
+    width: 70%;
+}
+
+
+.fa-circle-play{
+    font-size: 30px;
+}
+
+.fa-circle-play:hover{
+    scale: 120%;
+    transition: 0.5s;
+}
+
+.commands.right{
+    justify-content: flex-end;
+}
+
+.base-line{
+    width: 30%;
+    height: 4px;
+    border-radius: 30px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.base-line div:hover::after{
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    right: -3px;
+    opacity: 1;
 
 }
+
+.base-line div:hover{
+    opacity: 1;
+    background-color: #acfd2f;
+}
+
+.base-line div{
+    width: 60%;
+    height: 4px;
+    border-radius: 30px;
+    background-color: white;
+    opacity: 0.5;
+    position: relative;
+}
+
+.minutes{
+    font-weight: bold;
+    font-size: 90%;
+}
+
 
 /* ANCHOR md */
 
@@ -400,6 +491,16 @@ li:hover :before{
     } 
     .user-cta figure{
         width: 2em;
+    }
+
+    .left.side figure{
+        width: 100%;
+    }
+
+    .left.side div,
+    .left.side .fa-folder,
+    .left.side .fa-heart{
+        display: none;
     }
     
 }
