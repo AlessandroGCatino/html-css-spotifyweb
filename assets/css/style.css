@@ -303,7 +303,6 @@ li:hover :before{
     display: flex;
     padding: 10px;
     color: white;
-    overflow: hidden;
     align-items: center;
     gap: 20px;
 }
@@ -324,6 +323,17 @@ li:hover :before{
     font-size: 14px;
 }
 
+.commands.left div:first-of-type{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.commands.left div:last-of-type{
+    display: flex;
+    gap:20px;
+}
+
 .commands.left figure{
     height: 100%;
 }
@@ -340,8 +350,8 @@ li:hover :before{
 }
 
 .commands.mid{
-    display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .commands.mid .upper{
@@ -432,7 +442,17 @@ li:hover :before{
     .rec-played .album,
     .for-you .album,
     .most-popular .album{
-        width: calc(100%/4 - 10px);}
+        width: calc(100%/4 - 10px);
+    }
+
+    .player .commands{
+        width: calc(100%/3);
+    }
+
+    .commands.left div:last-of-type{
+        flex-direction: column;
+        gap:10px;
+    }
     
 }
 
@@ -447,7 +467,15 @@ li:hover :before{
     .rec-played .album,
     .for-you .album,
     .most-popular .album{
-        width: calc(100%/2 - 10px);}
+        width: calc(100%/2 - 10px);
+    }
+
+    .commands.mid .upper{
+        gap:10px;
+    }
+    .commands.mid .down span{
+        display: none;
+    }
     
 }
 
@@ -497,9 +525,36 @@ li:hover :before{
         width: 100%;
     }
 
-    .left.side div,
+    .left.side.commands{
+        width: 25%;
+    }
+
+    .commands.side.right{
+        width: 25%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .base-line,
+    .commands.mid .down .base-line{
+        width: 90%;
+    }
+
+    .commands.mid{
+        width: 40%;
+    }
+
+
+    .left.side.commands div,
     .left.side .fa-folder,
     .left.side .fa-heart{
+        display: none;
+    }
+
+    .commands.mid .upper :first-child,
+    .commands.mid .upper :last-child{
         display: none;
     }
     
